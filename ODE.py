@@ -79,7 +79,7 @@ y[:, dictAlphabet['gAPAP']] * Vol * 6.022e23,
 y[:, dictAlphabet['pAPAP']] * Vol * 6.022e23,
 y[:, dictAlphabet['tAPAP']] * Vol * 6.022e23))
 ,columns=['time','lAPAP','gAPAP', 'pAPAP','tAPAP'])
-df.to_csv("example.csv",index=False)
+df.to_csv("concentrations.csv",index=False)
 
 plt.legend(['lAPAP','gAPAP','pAPAP','tAPAP'], fontsize=12)
 fileName = fileModelName + 'ODEpy.png'
