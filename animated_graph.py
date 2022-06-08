@@ -18,7 +18,7 @@ def caricafile(fname):
 
     return lista
 
-liste = caricafile('example.csv')
+liste = caricafile('concentrations.csv')
 liste = liste[1:10000:50]
 
 fig = plt.figure()
