@@ -10,7 +10,7 @@ For reactions involving the enzymes CYP, SULT, UGT, GST the maximum reaction rat
 4. To 'animated_graph.py' file you pass example.csv and you obtain the paracetamol concentration dynamic graph.
 
 ## RESULTS
-1. A graph with these characteristics should be obtained from pyODE_mod: 
+1. A graph with these characteristics should be obtained from ODE.py: 
 - In line with expectations, the concentration of paracetamol in the intestine starts to decrease immediately after intake.
 - After about an hour, the liver reaches the maximum concentration of paracetamol and begins to metabolise it.
 - The concentrations of tAPAP and pAPAP increase with different slopes as [lAPAP] decreases.
