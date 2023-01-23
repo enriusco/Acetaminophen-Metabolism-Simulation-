@@ -6,3 +6,25 @@ output: pdf_document
 ---
 
 jwhefiuwebcbqwijnwandwqio
+
+l'informazione disponibile in base a nuove conoscenze. Tale probabilità
+a posteriori del parametro $p(\theta|y)$ si ottiene:
+$p(\theta|y)=\frac{\prod_{i=1}^{n}p(y_i|\theta)p(\theta)}{\int_\Theta p(y_i|\theta)p(\theta)d \theta}$
+con $\theta\ \epsilon\ \Theta$ definito in R, con il denominatore che
+esprime la distribuzione marginale dei dati ottenuta integrando rispetto
+
+```{r}
+library(survival)
+library(MASS)
+
+# Creare un oggetto di sopravvivenza
+surv <- Surv(SOFA_pulito$time, SOFA_pulito$evento)
+
+# Eseguire una procedura stepwise per selezionare  variabili significative nel modello di Cox
+model <- coxph(surv ~ SOFA_cat1+SEX+STATCIV_cat+CADUTE+CCSCORE_cat1+MMSE_cat+ALB+
+                 CALC+HBING+TEMPRIC+INTDURAT+ANEST_cat+ETA+BMI, data = SOFA_pulito)
+step_model <- stepAIC(model, direction = "backward")
+summary(step_model)
+
+```
+
